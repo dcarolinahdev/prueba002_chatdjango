@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	{% block head_content %}{% endblock %}
+
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" crossorigin="anonymous" />
+	<!--<link rel="stylesheet" href="{% static 'css/mainbase.css' %}" />-->
+</head>
+
+<body>
+	{% include "nav.html" %}
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-3">
+				{% block container_users %}{% endblock %}
+			</div>
+			<div class="col-9">
+				{% block container_msgs %}{% endblock %}
+			</div>
+		</div>
+	</div>
+</body>
+</html>

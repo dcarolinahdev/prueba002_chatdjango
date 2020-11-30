@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block container_users %}
+	<h2>Users</h2>
+	{% for user in object_list %}
+		<div class="row">
+			<div class="col">
+				<a href="">
+					<img class="mr-3 rounded-circle" src="{{ user.profile.picture.url }}" alt="Image profile not found">
+				</a>
+			</div>
+			<div class="col-8">
+				<div class="row">
+					{{ user.username }}
+				</div>
+				<div class=row>
+					{{ user.last_login }}
+				</div>
+			</div>
+			
+			<!--<div class="col">
+				<a href="{% url 'chats:detail' user.id %}">Ver</a>
+				<a href="{% url 'chats:update' user.id %}">Editar</a>
+				<a href="{% url 'chats:delete' user.id %}">Borrar</a>
+			</div>-->
+		</div>
+	{% endfor %}
+{% endblock%}
