@@ -14,6 +14,7 @@
 	{% include "nav.html" %}
 	
 	<div class="container">
+		{% block container %}
 		<div class="row">
 			<div class="col-3">
 				{% block container_users %}{% endblock %}
@@ -22,6 +23,7 @@
 				{% block container_msgs %}{% endblock %}
 			</div>
 		</div>
+		{% endblock %}
 	</div>
 </body>
 </html>
