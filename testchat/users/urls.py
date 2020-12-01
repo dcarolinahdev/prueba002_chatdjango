@@ -24,4 +24,9 @@ urlpatterns = [
 		view = views.signup_view,
 		name = 'signup'
 	),
+	path(
+		route = 'me/profile/',
+		view = views.update_profile,
+		name = 'update_profile'
+	),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

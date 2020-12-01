@@ -20,7 +20,7 @@ def login_view(request):
 		user = authenticate(request, username=username, password=password)
 		if user:
 			login(request, user)
-			return redirect('chats:chats_list')
+			return redirect('chats:list')
 		else:
 			return render(request, 'users/login.html', {'error': 'Invalid username and password'})
 
@@ -58,3 +58,16 @@ def signup_view(request):
 		return redirect('users:login')
 
 	return render(request, 'users/signup.html')
+
+def update_profile(request):
+	"""Update a user's profile view"""
+	profile = request.user.profile
+	
+	return render(
+		request=request, 
+		template_name='users/update_profile.html',
+		context={
+			'profile': profile,
+			'user': request.user
+		}
+	)
