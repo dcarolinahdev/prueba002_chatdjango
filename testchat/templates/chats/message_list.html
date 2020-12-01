@@ -10,7 +10,7 @@
 		{% for message in object_list %}
 			<div class="col-lg-4 offset-lg-4">
 				<div class="media">
-					<img class="mr-3 rounded-circle" src="{{ message.user.profile.picture.url }}" alt="Image profile not found">
+					<img class="mr-3 rounded-circle" src="{{ message.user.profile.picture.url }}" height="50" alt="Image profile not found">
 					<div class="media-body">
 						<strong>By</strong> {{ message.user.username }}
 					</div>
