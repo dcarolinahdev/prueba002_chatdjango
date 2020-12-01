@@ -16,6 +16,10 @@
 				<form action="{% url 'users:update_profile' %}" method="POST" enctype="multipart/form-data">
 					{% csrf_token %}
 
+					{% if form.errors %}
+						<p class="alert alert-danger">{{ form.errors }}</p>
+					{% endif %}
+
 					<div class="media">
 						{% if profile.picture %}
 							<img src="{{ profile.picture.url }}" class="rounded-circle" height="50" />
