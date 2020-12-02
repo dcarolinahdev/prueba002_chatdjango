@@ -25,11 +25,6 @@ urlpatterns = [
 		name = 'detail'
 	),
 	path(
-		route = 'chats/<int:pk>/update/',
-		view = views.MessageUpdate.as_view(),
-		name = 'update'
-	),
-	path(
 		route = 'chats/<int:pk>/delete',
 		view = views.MessageDelete.as_view(),
 		name = 'delete'
