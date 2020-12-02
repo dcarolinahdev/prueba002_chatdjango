@@ -21,8 +21,9 @@ from chats.forms import MessageForm
 
 
 class MessageList(ListView):
+	paginate_by = 15
 	model = Message
-	template_name = 'chats/message_list.html'
+	template_name = 'chats/message_form.html'
 
 class MessageCreate(CreateView):
 	model = Message

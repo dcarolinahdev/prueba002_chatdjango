@@ -20,6 +20,8 @@ class Message(models.Model):
 		blank=True, 
 		null=True
 	)
+	class Meta:
+		ordering = ['created']
 
 	def __str__(self):
 		"""Return email"""
