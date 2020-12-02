@@ -12,7 +12,7 @@ class Message(models.Model):
 	"""Message model."""
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
 	profile = models.ForeignKey('users.Profile', on_delete=models.CASCADE)
-	message_text = models.TextField(blank=True)
+	message_text = models.TextField(blank=True, null=True)
 	created = models.DateTimeField(auto_now_add=True)
 	modified = models.DateTimeField(auto_now=True)
 	image_msg = models.ImageField(
