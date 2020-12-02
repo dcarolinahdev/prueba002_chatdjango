@@ -1,3 +1,2 @@
-<h1>{{ message.user.username }}</h1>
-<p>Last login: <i></i></p>
-<p><a href="{% url 'chats:list' %}">Return</a></p>
+<h3>{{ message.user.username }}</h3>
+<img class="img-fluid mt-3" src="{{ message.image_msg.url }}" alt="Image empty">
