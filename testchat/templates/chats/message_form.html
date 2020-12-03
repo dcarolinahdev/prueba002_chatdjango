@@ -1,7 +1,28 @@
-{% extends "chats/message_list.html" %}
 
-{% block container_form_msgs %}
+<div class="container">
+	<div class="row justify-content-md-center">
+		<div class="col" id="msg-box">
+			<form method="POST" action="{% url 'chats:create' %}" enctype="multipart/form-data">
+				{% csrf_token %}
 
+				<input type="hidden" name="user" value="{{ user }}" />
+				<input type="hidden" name="profile" value="{{ profile }}" />
 
+				<div class="form-group">
+					<label>Choose an image:</label>
+					<input
+						class="form-control {% if form.image_msg.errors %}is-invalid{% endif %}"
+						type="file"
+						name="image_msg"
+						placeholder="image"
+					>
+					<div class="invalid-feedback">
+						{% for error in form.image_msg.errors %}{{ error }}{% endfor %}
+					</div>
+				</div>
 
-{% endblock%}
+				<button type="submit" class="btn btn-primary btn-block mt-5">Send</button>
+			</form>
+		</div>
+	</div>
+</div>

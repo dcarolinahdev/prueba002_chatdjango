@@ -4,6 +4,10 @@
 	<title>Test Chat</title>
 {% endblock%}
 
+{% block container_users %}
+	{% include "users/user_list.html" %}
+{% endblock%}
+
 {% block container_msgs %}
 	<div class="row">
 		{% for message in page_obj %}
@@ -40,7 +44,6 @@
 		</div>
 	</div>
 	<div class="fixed-bottom">
-		{% block container_form_msgs %}
-		{% endblock %}
+		{% include "chats/message_form.html" %}
 	</div>
 {% endblock%}
